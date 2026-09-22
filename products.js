@@ -32,29 +32,16 @@ function buy(id){
  document.getElementById("confirmBtn").onclick=confirmBuy;
  document.getElementById("modal").classList.remove("hidden");
 }
-function closeModal(function confirmBuy(){
-  if(!selected) return;
-
-  localStorage.setItem("pendingProduct", JSON.stringify(selected));
-
-  window.location.href = "payment.html";
-}){document.getElementById("modal").classList.add("hidden")}
-function function confirmBuy(){
-  if(!selected) return;
-
-  localStorage.setItem("pendingProduct", JSON.stringify(selected));
-
-  window.location.href = "payment.html";
-}(){
- const balance=getBalance();
- if(balance<selected.price){
-   document.getElementById("orderMsg").textContent="Insufficient wallet balance. Add demo balance from the dashboard.";
-   return;
- }
- const orders=getOrders();
- const order={id:"ORD-"+Date.now(),product:selected.name,price:selected.price,status:"Paid",date:new Date().toLocaleString()};
- orders.unshift(order); saveOrders(orders); setBalance(balance-selected.price);
- document.getElementById("orderMsg").textContent="Order placed successfully!";
- setTimeout(()=>{closeModal();render()},700);
+function closeModal(){
+  document.getElementById("modal").classList.remove("show");
 }
+
+function confirmBuy(){
+  if(!selected) return;
+
+  localStorage.setItem("pendingProduct", JSON.stringify(selected));
+
+  window.location.href = "payment.html";
+}
+
 render();
