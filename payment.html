@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Payment - TANBIR PANEL STORE</title>
+<link rel="stylesheet" href="payment.css">
+</head>
+<body>
+<header><a href="products.html">← Products</a><b>TANBIR <span>PANEL STORE</span></b></header>
+<main>
+<section class="card">
+<div class="eyebrow">MANUAL UPI PAYMENT</div>
+<h1>Pay with UPI</h1>
+<p class="muted">Scan the QR code with PhonePe or another UPI app.</p>
+<div class="order"><div><small>Product</small><strong id="product">Digital Product</strong></div><div><small>Amount</small><strong id="amount">₹0</strong></div></div>
+<div class="qr"><img src="payment-qr.png" alt="PhonePe UPI QR code"></div>
+<div class="upi"><small>UPI ID</small><strong>8609345979@ybl</strong><button id="copy">Copy UPI ID</button></div>
+<h2>How to pay</h2>
+<ol>
+<li>Open PhonePe or another UPI app.</li>
+<li>Scan the QR code.</li>
+<li>Enter the exact amount shown above.</li>
+<li>Complete the payment.</li>
+<li>Keep your payment screenshot/UTR ready for manual verification.</li>
+</ol>
+<button id="paid" class="paid">I Have Paid</button>
+<p id="status"></p>
+<p class="warning">Payment is manually verified. Never enter your UPI PIN, OTP, card number or bank password on this website.</p>
+</section>
+</main>
+<script src="payment.js"></script>
+</body>
+</html>
