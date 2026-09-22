@@ -1,0 +1,23 @@
+*{box-sizing:border-box}
+:root{--bg:#050d12;--card:#09161c;--card2:#0d2028;--line:#1b3b47;--text:#f3f7f9;--muted:#8fa5ae;--cyan:#13c8ef}
+body{margin:0;background:radial-gradient(circle at top,#0d3440 0,#07151b 42%,#04090d 100%);color:var(--text);font-family:Arial,sans-serif;min-height:100vh;padding-bottom:90px}
+button{font:inherit}
+.topbar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:18px 18px 14px;background:rgba(4,12,16,.92);backdrop-filter:blur(12px);border-bottom:1px solid #17323b}
+.brand{font-weight:900;font-size:19px;letter-spacing:.5px}.brand span{color:var(--cyan)}
+.welcome{font-size:12px;color:var(--muted);margin-top:4px}.wallet-mini{padding:9px 12px;border:1px solid var(--line);border-radius:14px;background:#09171d;color:var(--cyan);font-weight:800}
+.page{max-width:900px;margin:auto;padding:18px}
+.hero{padding:24px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,#0b2028,#071219);box-shadow:0 20px 60px #0005}
+.eyebrow{font-size:11px;letter-spacing:1.5px;color:var(--cyan);font-weight:800;margin:0 0 7px}
+h1{font-size:30px;line-height:1.1;margin:0 0 10px}h2{margin:0;font-size:22px}.muted{color:var(--muted);line-height:1.55}
+.primary,.product button{border:0;border-radius:13px;background:var(--cyan);color:#031016;font-weight:900;padding:13px 18px;cursor:pointer}
+.hero .primary{margin-top:10px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.stat-card,.quick,.product,.wallet-box,.profile-card{border:1px solid var(--line);background:rgba(8,22,28,.9);border-radius:18px}
+.stat-card{padding:16px}.stat-card span,.stat-card small{display:block;color:var(--muted);font-size:12px}.stat-card strong{display:block;font-size:22px;margin:7px 0}.stat-card button{background:none;border:0;color:var(--cyan);padding:0;font-size:12px}
+.content-section{display:none;margin-top:22px}.content-section.active{display:block}.section-head{margin-bottom:12px}
+.quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.quick{text-align:left;padding:18px;color:var(--text);cursor:pointer}.quick:first-letter{font-size:24px}.quick b,.quick span{display:block}.quick b{margin-top:10px}.quick span{font-size:12px;color:var(--muted);margin-top:4px}
+.products{display:grid;gap:12px}.product{padding:18px}.product-icon{font-size:28px}.product h3{margin:10px 0 6px}.product p{color:var(--muted);font-size:13px}.product-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:15px}.product-bottom strong{font-size:21px}
+.orders-empty,.wallet-box,.profile-card{padding:20px;color:var(--muted)}.order{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);color:var(--text)}.wallet-box strong{display:block;color:var(--cyan);font-size:36px;margin:10px 0 18px}.profile-card{display:flex;align-items:center;gap:14px;color:var(--text)}.profile-card span{display:block;color:var(--muted);font-size:12px;margin-top:4px}.avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--cyan);color:#031016;font-weight:900;font-size:22px}.logout{margin-top:14px;border:1px solid #6c2630;background:#2a1116;color:#ff9ca8;border-radius:12px;padding:12px 18px}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:10;display:flex;justify-content:space-around;padding:9px 5px calc(9px + env(safe-area-inset-bottom));background:rgba(3,10,14,.96);border-top:1px solid var(--line);backdrop-filter:blur(14px)}
+.nav-item{border:0;background:none;color:#78909a;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:18px;min-width:58px;cursor:pointer}.nav-item span{font-size:10px}.nav-item.active{color:var(--cyan)}
+.toast{position:fixed;left:50%;bottom:85px;transform:translateX(-50%) translateY(20px);background:#102932;border:1px solid var(--line);padding:12px 16px;border-radius:12px;opacity:0;pointer-events:none;transition:.25s;color:var(--text);font-size:13px}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:650px){.stats{grid-template-columns:1fr}.hero{padding:20px}h1{font-size:25px}.page{padding:14px}.wallet-mini{font-size:12px}}

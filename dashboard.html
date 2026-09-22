@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TANBIR PANEL STORE — Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand">TANBIR <span>PANEL STORE</span></div>
+      <div class="welcome">Welcome back 👋</div>
+    </div>
+    <div class="wallet-mini">₹ <span id="walletTop">0.00</span></div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR STORE DASHBOARD</p>
+        <h1>Everything you need, in one place.</h1>
+        <p class="muted">Manage your wallet, digital products and orders from your phone.</p>
+      </div>
+      <button class="primary" onclick="showSection('products')">Browse Products</button>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card">
+        <span>Wallet Balance</span>
+        <strong>₹<span id="walletCard">0.00</span></strong>
+        <button onclick="addDemoMoney()">+ Add demo balance</button>
+      </div>
+      <div class="stat-card">
+        <span>Total Orders</span>
+        <strong id="orderCount">0</strong>
+        <small>Demo data</small>
+      </div>
+      <div class="stat-card">
+        <span>Account</span>
+        <strong id="userName">Guest</strong>
+        <small>Local demo account</small>
+      </div>
+    </section>
+
+    <section id="home" class="content-section active">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">QUICK ACCESS</p>
+          <h2>Store overview</h2>
+        </div>
+      </div>
+      <div class="quick-grid">
+        <button class="quick" onclick="showSection('products')">🛒<b>Products</b><span>View digital products</span></button>
+        <button class="quick" onclick="showSection('orders')">📦<b>Orders</b><span>See your purchases</span></button>
+        <button class="quick" onclick="showSection('wallet')">💰<b>Wallet</b><span>Check balance</span></button>
+        <button class="quick" onclick="showSection('profile')">👤<b>Profile</b><span>Account settings</span></button>
+      </div>
+    </section>
+
+    <section id="products" class="content-section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">DIGITAL PRODUCTS</p>
+          <h2>Featured products</h2>
+        </div>
+      </div>
+      <div class="products">
+        <article class="product">
+          <div class="product-icon">⚡</div>
+          <h3>Premium Digital Pack</h3>
+          <p>Instant digital delivery after purchase.</p>
+          <div class="product-bottom"><strong>₹99</strong><button onclick="buyProduct('Premium Digital Pack',99)">Buy</button></div>
+        </article>
+        <article class="product">
+          <div class="product-icon">🚀</div>
+          <h3>Pro Digital Pack</h3>
+          <p>A larger digital bundle for your store.</p>
+          <div class="product-bottom"><strong>₹199</strong><button onclick="buyProduct('Pro Digital Pack',199)">Buy</button></div>
+        </article>
+        <article class="product">
+          <div class="product-icon">💎</div>
+          <h3>Ultimate Digital Pack</h3>
+          <p>Premium digital content with instant access.</p>
+          <div class="product-bottom"><strong>₹299</strong><button onclick="buyProduct('Ultimate Digital Pack',299)">Buy</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="orders" class="content-section">
+      <div class="section-head"><div><p class="eyebrow">PURCHASE HISTORY</p><h2>Your orders</h2></div></div>
+      <div id="ordersList" class="orders-empty">No orders yet. Purchase a product to see it here.</div>
+    </section>
+
+    <section id="wallet" class="content-section">
+      <div class="section-head"><div><p class="eyebrow">WALLET</p><h2>Your balance</h2></div></div>
+      <div class="wallet-box">
+        <span>Available balance</span>
+        <strong>₹<span id="walletLarge">0.00</span></strong>
+        <button class="primary" onclick="addDemoMoney()">Add demo balance</button>
+        <p class="muted">This is a frontend demo. Real payments require a secure payment/backend system.</p>
+      </div>
+    </section>
+
+    <section id="profile" class="content-section">
+      <div class="section-head"><div><p class="eyebrow">ACCOUNT</p><h2>Profile</h2></div></div>
+      <div class="profile-card">
+        <div class="avatar">T</div>
+        <div><strong id="profileName">Guest User</strong><span id="profileEmail">Demo account</span></div>
+      </div>
+      <button class="logout" onclick="logout()">Logout</button>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-section="home" onclick="showSection('home')">⌂<span>Home</span></button>
+    <button class="nav-item" data-section="products" onclick="showSection('products')">🛒<span>Products</span></button>
+    <button class="nav-item" data-section="orders" onclick="showSection('orders')">📦<span>Orders</span></button>
+    <button class="nav-item" data-section="wallet" onclick="showSection('wallet')">💰<span>Wallet</span></button>
+    <button class="nav-item" data-section="profile" onclick="showSection('profile')">👤<span>Profile</span></button>
+  </nav>
+
+  <div id="toast" class="toast"></div>
+  <script src="dashboard.js"></script>
+</body>
+</html>
