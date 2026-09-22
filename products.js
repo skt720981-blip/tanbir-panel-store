@@ -33,7 +33,13 @@ function buy(id){
  document.getElementById("modal").classList.remove("hidden");
 }
 function closeModal(){document.getElementById("modal").classList.add("hidden")}
-function confirmBuy(){
+function function confirmBuy(){
+  if(!selected) return;
+
+  localStorage.setItem("pendingProduct", JSON.stringify(selected));
+
+  window.location.href = "payment.html";
+}(){
  const balance=getBalance();
  if(balance<selected.price){
    document.getElementById("orderMsg").textContent="Insufficient wallet balance. Add demo balance from the dashboard.";
