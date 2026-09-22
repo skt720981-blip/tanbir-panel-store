@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Products - TANBIR PANEL STORE</title>
+  <link rel="stylesheet" href="products.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand">TANBIR <span>PANEL STORE</span></div>
+      <div class="sub">Digital Products</div>
+    </div>
+    <a class="wallet" href="dashboard.html">₹ <b id="walletBalance">0.00</b></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">PREMIUM STORE</div>
+      <h1>Choose a product</h1>
+      <p>Buy your selected digital product using your demo wallet balance.</p>
+    </section>
+
+    <section id="productGrid" class="grid"></section>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="dashboard.html">⌂<small>Home</small></a>
+    <a class="active" href="products.html">🛒<small>Products</small></a>
+    <a href="orders.html">📦<small>Orders</small></a>
+    <a href="dashboard.html">💰<small>Wallet</small></a>
+    <a href="dashboard.html">👤<small>Profile</small></a>
+  </nav>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button class="close" onclick="closeModal()">×</button>
+      <div class="icon">🛍️</div>
+      <h2 id="modalTitle">Confirm order</h2>
+      <p id="modalText"></p>
+      <div class="modal-actions">
+        <button class="btn secondary" onclick="closeModal()">Cancel</button>
+        <button class="btn" id="confirmBtn">Confirm Buy</button>
+      </div>
+      <div id="orderMsg" class="message"></div>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+</body>
+</html>

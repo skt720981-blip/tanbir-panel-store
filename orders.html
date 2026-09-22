@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Orders - TANBIR PANEL STORE</title><link rel="stylesheet" href="products.css">
+</head>
+<body>
+<header class="topbar"><div><div class="brand">TANBIR <span>PANEL STORE</span></div><div class="sub">My Orders</div></div><a class="wallet" href="dashboard.html">₹ <b id="walletBalance">0.00</b></a></header>
+<main><section class="hero"><div class="eyebrow">ORDER HISTORY</div><h1>Your Orders</h1><p>All demo purchases made from this browser are shown here.</p></section><section id="orders" class="grid"></section></main>
+<nav class="bottom-nav"><a href="dashboard.html">⌂<small>Home</small></a><a href="products.html">🛒<small>Products</small></a><a class="active" href="orders.html">📦<small>Orders</small></a><a href="dashboard.html">💰<small>Wallet</small></a><a href="dashboard.html">👤<small>Profile</small></a></nav>
+<script>
+function money(n){return Number(n).toFixed(2)}
+function renderOrders(){
+ const b=Number(localStorage.getItem("tanbir_wallet_balance")||"0"); document.getElementById("walletBalance").textContent=money(b);
+ let orders=[];try{orders=JSON.parse(localStorage.getItem("tanbir_orders")||"[]")}catch{}
+ const el=document.getElementById("orders");
+ if(!orders.length){el.innerHTML='<article class="card"><h2>No orders yet</h2><div class="desc">Go to Products and place your first demo order.</div><a class="btn" style="display:block;text-align:center;text-decoration:none;margin-top:15px" href="products.html">Browse Products</a></article>';return}
+ el.innerHTML=orders.map(o=>`<article class="card"><span class="tag">${o.status}</span><h2>${o.product}</h2><div class="price">₹${money(o.price)}</div><div class="desc">Order ID: ${o.id}<br>${o.date}</div></article>`).join("");
+}
+renderOrders();
+</script>
+</body></html>
