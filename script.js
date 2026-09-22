@@ -25,5 +25,5 @@ function login(e){
  const msg=document.getElementById('loginMsg');
  if(!found){msg.textContent='Invalid username/email or password.';return}
  localStorage.setItem('tanbir_demo_session',JSON.stringify({username:found.username,email:found.email}));
- msg.textContent='Login successful. Dashboard can be connected next.';
+ msg.textContent=window.location.href='dashboard.html';
 }
