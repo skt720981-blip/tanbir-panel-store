@@ -32,7 +32,13 @@ function buy(id){
  document.getElementById("confirmBtn").onclick=confirmBuy;
  document.getElementById("modal").classList.remove("hidden");
 }
-function closeModal(){document.getElementById("modal").classList.add("hidden")}
+function closeModal(function confirmBuy(){
+  if(!selected) return;
+
+  localStorage.setItem("pendingProduct", JSON.stringify(selected));
+
+  window.location.href = "payment.html";
+}){document.getElementById("modal").classList.add("hidden")}
 function function confirmBuy(){
   if(!selected) return;
 
