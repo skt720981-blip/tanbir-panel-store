@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TANBIR PANEL STORE — Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <div class="brand">TANBIR <span>PANEL STORE</span></div>
+  <div class="card">
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('login')">LOGIN</button>
+      <button class="tab" onclick="showTab('register')">REGISTER</button>
+    </div>
+
+    <form id="login" class="form" onsubmit="login(event)">
+      <label>Email / Username</label>
+      <input id="loginUser" required placeholder="Enter username or email">
+      <label>Password</label>
+      <input id="loginPass" type="password" required placeholder="Enter password">
+      <button class="primary">LOGIN</button>
+      <p id="loginMsg" class="msg"></p>
+    </form>
+
+    <form id="register" class="form hidden" onsubmit="register(event)">
+      <label>Username</label>
+      <input id="regUser" required minlength="3" placeholder="Choose username">
+      <label>Email</label>
+      <input id="regEmail" type="email" required placeholder="you@example.com">
+      <label>Password</label>
+      <input id="regPass" type="password" required minlength="6" placeholder="Minimum 6 characters">
+      <label>Confirm Password</label>
+      <input id="regConfirm" type="password" required placeholder="Repeat password">
+      <button class="primary">CREATE ACCOUNT</button>
+      <p id="regMsg" class="msg"></p>
+    </form>
+  </div>
+  <p class="note">Demo frontend authentication. Real production login requires a secure backend/database.</p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
