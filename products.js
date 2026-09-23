@@ -41,7 +41,7 @@ function confirmBuy(){
 
   localStorage.setItem("pendingProduct", JSON.stringify(selected));
 
-  window.location.href =window.location.href = "payment.html?product=" + encodeURIComponent(selected.name) + "&amount=" + selected.price;
+  window.location.href = "payment.html?product=" + encodeURIComponent(selected.name) + "&amount=" + selected.price;
 }
 
 render();
