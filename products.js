@@ -35,7 +35,6 @@ function buy(id){
 function closeModal(){
   document.getElementById("modal").classList.remove("show");
 }
-
 function confirmBuy(){
   if(!selected) return;
 
@@ -43,5 +42,3 @@ function confirmBuy(){
 
   window.location.href = "payment.html?product=" + encodeURIComponent(selected.name) + "&amount=" + selected.price;
 }
-
-render();
