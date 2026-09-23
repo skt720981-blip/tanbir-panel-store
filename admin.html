@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin - TANBIR PANEL STORE</title>
+</head>
+<body>
+
+<h1>TANBIR PANEL STORE — Admin</h1>
+<p>Pending payments will appear here.</p>
+
+<div id="payments"></div>
+
+<script>
+const box = document.getElementById("payments");
+
+const payment = localStorage.getItem("tanbirPendingPayment");
+
+if (payment) {
+  const data = JSON.parse(payment);
+
+  box.innerHTML = `
+    <h2>Pending Payment</h2>
+    <p><b>Product:</b> ${data.product}</p>
+    <p><b>Amount:</b> ₹${data.amount}</p>
+    <p><b>UTR:</b> ${data.utr}</p>
+    <p><b>Status:</b> ${data.status}</p>
+  `;
+} else {
+  box.innerHTML = "<p>No pending payments.</p>";
+}
+</script>
+
+</body>
+</html>
