@@ -1,4 +1,4 @@
-const PRODUCTS=[
+ const PRODUCTS=[
  {id:"p1",name:"Starter Digital Pack",price:99,tag:"STARTER",desc:"A ready-to-use digital product package."},
  {id:"p2",name:"Premium Digital Pack",price:199,tag:"PREMIUM",desc:"Extended digital resources for your store customers."},
  {id:"p3",name:"Pro Creator Pack",price:299,tag:"PRO",desc:"A larger premium package for advanced users."},
