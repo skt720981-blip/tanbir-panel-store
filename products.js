@@ -42,3 +42,4 @@ function confirmBuy(){
 
   window.location.href = "payment.html?product=" + encodeURIComponent(selected.name) + "&amount=" + selected.price;
 }
+render();
